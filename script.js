@@ -1,3 +1,7 @@
+// ✅ DEBUG: confirms JS is loaded
+console.log("script.js loaded successfully");
+
+// Product data
 var products = [
   { name: "Laptop", price: 800, rating: 4.5, category: "Electronics" },
   { name: "Phone", price: 500, rating: 4.2, category: "Electronics" },
@@ -24,6 +28,7 @@ var products = [
   { name: "Dumbbells", price: 45, rating: 4.5, category: "Sports" }
 ];
 
+// Main function
 function displayProducts() {
   var category = document.getElementById("categoryFilter").value;
   var sort = document.getElementById("sortBy").value;
@@ -31,14 +36,14 @@ function displayProducts() {
 
   var filtered = [];
 
-  // Filter
+  // Filter products
   for (var i = 0; i < products.length; i++) {
     if (category === "All" || products[i].category === category) {
       filtered.push(products[i]);
     }
   }
 
-  // Sort
+  // Sort products
   if (sort === "price-asc") filtered.sort((a, b) => a.price - b.price);
   if (sort === "price-desc") filtered.sort((a, b) => b.price - a.price);
   if (sort === "name-asc") filtered.sort((a, b) => a.name.localeCompare(b.name));
@@ -46,7 +51,7 @@ function displayProducts() {
   if (sort === "rating-asc") filtered.sort((a, b) => a.rating - b.rating);
   if (sort === "rating-desc") filtered.sort((a, b) => b.rating - a.rating);
 
-  // Display
+  // Display products
   list.innerHTML = "";
   for (var i = 0; i < filtered.length; i++) {
     var p = filtered[i];
@@ -55,10 +60,9 @@ function displayProducts() {
   }
 }
 
-// Events
+// Event listeners
 document.getElementById("categoryFilter").addEventListener("change", displayProducts);
 document.getElementById("sortBy").addEventListener("change", displayProducts);
 
 // Initial load
 displayProducts();
-
