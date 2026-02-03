@@ -1,5 +1,5 @@
 // ✅ DEBUG: confirms JS is loaded
-console.log("script.js loaded successfully");
+console.log("index.js loaded successfully");
 
 // Product data
 var products = [
@@ -66,3 +66,4 @@ document.getElementById("sortBy").addEventListener("change", displayProducts);
 
 // Initial load
 displayProducts();
+
