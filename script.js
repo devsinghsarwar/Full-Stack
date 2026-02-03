@@ -61,3 +61,4 @@ document.getElementById("sortBy").addEventListener("change", displayProducts);
 
 // Initial load
 displayProducts();
+
